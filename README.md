@@ -36,12 +36,12 @@ If you haven't set up your Git credentials and SSH key, follow these steps:
 
 2. Generate an SSH key (if you haven't already):
    ```bash
-   ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+   ssh-keygen -t ed25519 -C "your_email@example.com"
    ```
 
 3. Copy and add your SSH key to GitHub/GitLab:
    ```bash
-   cat ~/.ssh/id_rsa.pub
+   cat ~/.ssh/id_ed25519.pub
    ```
 
 4. Test your SSH connection:
