@@ -1,6 +1,6 @@
 .PHONY: update ygainers.csv
 
-# create/update virtua env  and install dependencies
+# create/update virtual env  and install dependencies
 update:
 	@echo "Setting up virtual environment and installing dependencies..."
 	python3 -m venv env
