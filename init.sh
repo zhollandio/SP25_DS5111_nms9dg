@@ -1,11 +1,10 @@
 #!/bin/bash
-# init.sh - Bootstrap script for VM setup
+set -o errexit   # abort on nonzero exitstatus
 
+# init.sh - Bootstrap script for VM setup
 # Update package index
 echo "Updating package index..."
 sudo apt update
-
-set -e  # exit on error
 
 # install: make, python3.12-venv & tree
 echo "Installing required packages: make, python3.12-venv, tree"
