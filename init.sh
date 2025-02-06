@@ -1,5 +1,5 @@
 #!/bin/bash
-set -o errexit   # abort on nonzero exitstatus
+set -e  # exit on error
 
 # init.sh - Bootstrap script for VM setup
 # Update package index
