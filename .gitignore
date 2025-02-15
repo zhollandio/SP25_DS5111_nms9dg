@@ -169,3 +169,6 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+# Ignore generated CSV files from normalization and merging
+sample_data/*_norm.csv
+merged_gainers.csv
