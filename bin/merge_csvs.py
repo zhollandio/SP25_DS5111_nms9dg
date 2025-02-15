@@ -18,17 +18,13 @@ def merge_csvs(csv1, csv2, output_dir="sample_data", output_file="merged_gainers
     assert os.path.exists(csv1), f"File not found: {csv1}"
     assert os.path.exists(csv2), f"File not found: {csv2}"
 
-    # Ensure the output directory exists
     os.makedirs(output_dir, exist_ok=True)
 
-    # Full path for the output file
     output_path = os.path.join(output_dir, output_file)
 
-    # Read CSV files
     df1 = pd.read_csv(csv1)
     df2 = pd.read_csv(csv2)
 
-    # Merge and Save
     merged_df = pd.concat([df1, df2], ignore_index=True)
     merged_df.to_csv(output_path, index=False)
 
