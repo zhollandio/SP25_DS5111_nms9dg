@@ -2,13 +2,14 @@ import pandas as pd
 import sys
 import os
 
-def merge_csvs(csv1, csv2, output_file="merged_gainers.csv"):
+def merge_csvs(csv1, csv2, output_dir="sample_data", output_file="merged_gainers.csv"):
     """
-    Merges two normalized CSV files into one.
+    Merges two normalized CSV files into one and saves it in the specified output directory.
 
     Parameters:
     csv1 (str): Path to the first normalized CSV file.
     csv2 (str): Path to the second normalized CSV file.
+    output_dir (str): Directory where the merged file should be saved.
     output_file (str): Name of the merged CSV output file (default: merged_gainers.csv).
     
     Returns:
@@ -17,14 +18,21 @@ def merge_csvs(csv1, csv2, output_file="merged_gainers.csv"):
     assert os.path.exists(csv1), f"File not found: {csv1}"
     assert os.path.exists(csv2), f"File not found: {csv2}"
 
+    # Ensure the output directory exists
+    os.makedirs(output_dir, exist_ok=True)
+
+    # Full path for the output file
+    output_path = os.path.join(output_dir, output_file)
+
+    # Read CSV files
     df1 = pd.read_csv(csv1)
     df2 = pd.read_csv(csv2)
 
     # Merge and Save
     merged_df = pd.concat([df1, df2], ignore_index=True)
-    merged_df.to_csv(output_file, index=False)
+    merged_df.to_csv(output_path, index=False)
 
-    print(f"Merged CSV saved as: {output_file}")
+    print(f"Merged CSV saved as: {output_path}")
 
 if __name__ == "__main__":
     if len(sys.argv) != 3:
