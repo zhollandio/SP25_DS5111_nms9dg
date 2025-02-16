@@ -1,3 +1,14 @@
+"""
+normalize_csv.py
+
+This script normalizes a stock market CSV file into a standardized format.
+It reads a raw CSV file, renames columns, ensures required fields exist, and
+saves the cleaned file with a "_norm.csv" suffix.
+
+Usage:
+    python bin/normalize_csv.py <path_to_csv>
+"""
+
 import sys
 import os
 import pandas as pd
