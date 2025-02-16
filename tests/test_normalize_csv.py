@@ -1,6 +1,9 @@
+import sys
 import os
 import pytest
 import pandas as pd
+# project's root directory to sys.path so Python can find `bin/`
+sys.path.insert(0, os.path.abspath(os.path.dirname(os.path.dirname(__file__))))
 from bin.normalize_csv import normalize_csv
 
 # creating test dir and data
