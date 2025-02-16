@@ -1,6 +1,6 @@
-import pandas as pd
 import sys
 import os
+import pandas as pd
 
 def merge_csvs(csv1, csv2, output_dir="sample_data", output_file="merged_gainers.csv"):
     """
@@ -11,7 +11,7 @@ def merge_csvs(csv1, csv2, output_dir="sample_data", output_file="merged_gainers
     csv2 (str): Path to the second normalized CSV file.
     output_dir (str): Directory where the merged file should be saved.
     output_file (str): Name of the merged CSV output file (default: merged_gainers.csv).
-    
+
     Returns:
     None
     """
