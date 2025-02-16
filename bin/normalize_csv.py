@@ -28,7 +28,14 @@ def normalize_csv(input_csv):
     if not os.path.exists(input_csv):
         raise FileNotFoundError(f"File not found: {input_csv}")
 
-    df = pd.read_csv(input_csv)
+    try:
+        df = pd.read_csv(input_csv)
+    except pd.errors.EmptyDataError as exc:
+        raise ValueError("CSV file is empty or improperly formatted.") from exc
+    except pd.errors.ParserError as exc:
+        raise ValueError("File is not a valid CSV format.") from exc
+
+    # normalize column names
     df.columns = df.columns.str.strip().str.lower()
 
     expected_columns = ['symbol', 'price', 'price_change', 'price_percent_change']
@@ -44,6 +51,7 @@ def normalize_csv(input_csv):
     }
 
     df.rename(columns=column_mappings, inplace=True)
+
     missing_columns = [col for col in expected_columns if col not in df.columns]
     if missing_columns:
         raise ValueError(f"Missing expected columns: {missing_columns}")
@@ -51,9 +59,6 @@ def normalize_csv(input_csv):
     df = df[expected_columns]
     output_csv = input_csv.replace(".csv", "_norm.csv")
     df.to_csv(output_csv, index=False)
-
-    if not os.path.exists(output_csv):
-        raise RuntimeError(f"Failed to create normalized file: {output_csv}")
 
     print(f"Normalized CSV saved as: {output_csv}")
     return output_csv
@@ -64,4 +69,9 @@ if __name__ == "__main__":
         sys.exit(1)
 
     input_file = sys.argv[1]
-    normalize_csv(input_file)
+
+    try:
+        normalize_csv(input_file)
+    except (ValueError, FileNotFoundError) as e:
+        print(f"Error: {e}")
+        sys.exit(1)
