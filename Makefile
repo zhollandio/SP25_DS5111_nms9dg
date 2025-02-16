@@ -14,3 +14,19 @@ ygainers.csv:
 	google-chrome --headless --disable-gpu --dump-dom https://example.com > sample_data/ygainers.csv
 	@echo "Output saved to sample_data/ygainers.csv"
 
+# run pylint on .py files (prevents failure from stopping make)
+lint:
+	@echo "Running pylint..."
+	- . env/bin/activate && pylint bin/*.py || true
+	@echo "Linting complete."
+
+# run pytest after linting (run even if lint fail)
+test:
+	@echo "Running linter first..."
+	make lint
+	@echo "Running tests..."
+	. env/bin/activate && pytest -vv tests/
+	@echo "Testing complete."
+
+# runs linter 1st --> tests
+lint-test: test
