@@ -1,3 +1,14 @@
+"""
+merge_csvs.py
+
+This script merges two normalized stock market CSV files into a single CSV.
+It ensures both files exist, combines their contents, and saves the merged
+result in a specified output directory.
+
+Usage:
+    python bin/merge_csvs.py <normalized_csv1> <normalized_csv2>
+"""
+
 import sys
 import os
 import pandas as pd
@@ -35,7 +46,7 @@ if __name__ == "__main__":
         print("Usage: python bin/merge_csvs.py <normalized_csv1> <normalized_csv2>")
         sys.exit(1)
 
-    csv1 = sys.argv[1]
-    csv2 = sys.argv[2]
+    input_csv1 = sys.argv[1]  # Lint feedback - Renamed to avoid conflict
+    input_csv2 = sys.argv[2]
 
-    merge_csvs(csv1, csv2)
+    merge_csvs(input_csv1, input_csv2)
