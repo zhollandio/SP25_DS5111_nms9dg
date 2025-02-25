@@ -2,3 +2,6 @@ pandas
 lxml
 pylint
 pytest
+# requires Python 3.10 or newer
+python>=3.10
+
