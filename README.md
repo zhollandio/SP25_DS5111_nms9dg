@@ -1,5 +1,8 @@
 # Chrome Headless & Virtual Environment Setup
 
+![GitHub Workflow Status](https://github.com/zhollandio/SP25_DS5111_nms9dg/actions/workflows/validations.yml/badge.svg)
+
+
 ## Project Overview
 
 This repository provides a structured way to set up a new VM with a headless Chrome browser for web scraping and data collection. It automates the setup using scripts and a Makefile, allowing new users to get started quickly.

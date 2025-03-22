@@ -1,0 +1,36 @@
+name: Feature Validation
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.10", "3.11"]
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install dependencies using Makefile
+        run: |
+          make update  # Creates venv  and installs dependencies
+          . env/bin/activate
+          pip install pylint  # check if pylint  is installed
+
+      - name: Run linting
+        run: |
+          . env/bin/activate
+          make lint
+
+      - name: Run tests
+        run: |
+          . env/bin/activate
+          make test
