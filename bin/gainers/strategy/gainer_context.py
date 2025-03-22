@@ -1,13 +1,13 @@
-"""Context for Strategy pattern implementation."""
+"""Context for strategy pattern implem"""
 from .wsj_strategy import WSJStrategy
 from .yahoo_strategy import YahooStrategy
 
 
 class GainerContext:
-    """Context class that uses a strategy to get gainers."""
+    """context class that uses a strategy to get gainers"""
 
     def __init__(self, strategy_type=None):
-        """Initialize the gainer context with a strategy."""
+        """init"""
         self.strategy = None
         self.gainers = []
 
@@ -15,7 +15,7 @@ class GainerContext:
             self.set_strategy(strategy_type)
 
     def set_strategy(self, strategy_type):
-        """Set the strategy based on the type."""
+        """set the strategy based on type"""
         if strategy_type.lower() == 'wsj':
             self.strategy = WSJStrategy()
         elif strategy_type.lower() == 'yahoo':
@@ -24,7 +24,7 @@ class GainerContext:
             raise ValueError(f"Unsupported strategy type: {strategy_type}")
 
     def execute(self):
-        """Execute the strategy."""
+        """execute strategy"""
         if not self.strategy:
             raise ValueError("No strategy set")
 
@@ -35,6 +35,6 @@ class GainerContext:
         return self.gainers
 
     def print_gainers(self):
-        """Print the gainers to the console."""
+        """print to console"""
         for gainer in self.gainers:
             print(gainer)

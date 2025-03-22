@@ -1,4 +1,4 @@
-"""CNBC Gainer implementation."""
+"""CNBC gainer implem"""
 import requests
 from bs4 import BeautifulSoup
 from .base import BaseGainer
@@ -6,10 +6,10 @@ from datetime import datetime
 
 
 class CNBCGainer(BaseGainer):
-    """Class for fetching gainers from CNBC Market Movers."""
+    """class for fetching gainers from CNBC market movers"""
 
     def __init__(self):
-        """Initialize the CNBC gainer."""
+        """init cnbc"""
         super().__init__()
         self.url = "https://www.cnbc.com/us-market-movers/"
         self.headers = {
@@ -22,7 +22,7 @@ class CNBCGainer(BaseGainer):
         }
 
     def fetch_gainers(self):
-        """Fetch gainers from CNBC."""
+        """fetch gainers from CNBC"""
         print("Downloading CNBC gainers")
         response = requests.get(self.url, headers=self.headers, timeout=10)
         if response.status_code == 200:
@@ -32,18 +32,17 @@ class CNBCGainer(BaseGainer):
         return self.gainers
 
     def parse_data(self, data):
-        """Parse the HTML data from CNBC."""
+        """parse the HTML data from CNBC"""
         print("Normalizing CNBC gainers")
         gainers = []
         soup = BeautifulSoup(data, 'html.parser')
 
         # CNBC market movers page structure
-        # The actual structure might need adjustment based on the actual page
         gainer_section = soup.find('div', {'class': 'MarketMoversTable-table'})
 
         if gainer_section:
             rows = gainer_section.find_all('tr')
-            for row in rows[1:]:  # Skip header row
+            for row in rows[1:]:  # skip header
                 cells = row.find_all('td')
                 if len(cells) >= 4:
                     try:
@@ -64,12 +63,12 @@ class CNBCGainer(BaseGainer):
         return gainers
 
     def save_with_timestamp(self):
-        """Save the CNBC gainers to a file with timestamp."""
+        """save CNBC gainers - file w timestamp"""
         print("Saving CNBC gainers")
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         filename = f"cnbc_gainers_{timestamp}.csv"
 
-        # Save to CSV file
+        # save to CSV file
         try:
             with open(filename, 'w') as f:
                 f.write("symbol,name,price,change\n")

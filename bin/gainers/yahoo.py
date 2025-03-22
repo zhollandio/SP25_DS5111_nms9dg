@@ -1,19 +1,19 @@
-"""Yahoo Gainer implementation."""
+"""Yahoo Gainer implem"""
 import requests
 from bs4 import BeautifulSoup
 from .base import BaseGainer
 
 
 class YahooGainer(BaseGainer):
-    """Class for fetching gainers from Yahoo Finance."""
+    """fetching gainers from yahoo fin"""
 
     def __init__(self):
-        """Initialize the Yahoo gainer."""
+        """init"""
         super().__init__()
         self.url = "https://finance.yahoo.com/gainers"
 
     def fetch_gainers(self):
-        """Fetch gainers from Yahoo."""
+        """fetch from yahoo"""
         print("Downloading yahoo gainers")
         response = requests.get(self.url, timeout=10)
         if response.status_code == 200:
@@ -23,12 +23,10 @@ class YahooGainer(BaseGainer):
         return self.gainers
 
     def parse_data(self, data):
-        """Parse the HTML data from Yahoo."""
+        """parse HTML data from yahoo"""
         print("Normalizing yahoo gainers")
         gainers = []
         soup = BeautifulSoup(data, 'html.parser')
-        # Implement your Yahoo parsing logic here
-        # Example (you'll need to adjust based on the actual page structure):
         gainer_table = soup.find('table', {'data-test': 'gainers-table'})
         if gainer_table:
             rows = gainer_table.find('tbody').find_all('tr')
@@ -48,6 +46,5 @@ class YahooGainer(BaseGainer):
         return gainers
 
     def save_with_timestamp(self):
-        """Save the Yahoo gainers to a file with timestamp."""
+        """save w timestamp"""
         print("Saving Yahoo gainers")
-        # Implement saving logic here

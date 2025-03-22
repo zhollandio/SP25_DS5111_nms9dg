@@ -1,21 +1,21 @@
-"""Strategy pattern for gainers."""
+"""Strategy pattern for gainers (EC)"""
 from abc import ABC, abstractmethod
 
 
 class GainerStrategy(ABC):
-    """Strategy interface for fetching gainers data."""
+    """Strategy interface for fetching gainers data"""
 
     @abstractmethod
     def fetch_data(self):
-        """Fetch data from source."""
+        """Fetch data from source"""
         pass
 
     @abstractmethod
     def parse_data(self, data):
-        """Parse data from source."""
+        """Parse data from source"""
         pass
 
     @abstractmethod
     def save_data(self, gainers):
-        """Save data to file."""
+        """save data to file"""
         pass

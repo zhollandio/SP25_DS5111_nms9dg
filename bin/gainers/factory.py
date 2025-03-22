@@ -1,4 +1,4 @@
-"""Factory class for creating gainers."""
+"""Factory class for creating gainers"""
 from .wsj import WSJGainer
 from .yahoo import YahooGainer
 from .mock import MockGainer
@@ -6,21 +6,21 @@ from .cnbc import CNBCGainer
 
 
 class GainerFactory:
-    """Factory class for creating gainers."""
+    """factory class for creating gainers"""
 
     @staticmethod
     def create_gainer(source_type):
         """
-        Create a gainer based on the source type.
-        
+        create a gainer based on the source type
+
         Args:
-            source_type (str): Type of gainer to create (wsj, yahoo, mock, cnbc)
-            
+            source_type (str): type of gainer to create (wsj, yahoo, mock, cnbc)
+
         Returns:
-            BaseGainer: An instance of the specified gainer
-            
+            BaseGainer: instance of the specified gainer
+
         Raises:
-            ValueError: If the source type is not supported
+            ValueError: If the source type isnt supported
         """
         if source_type.lower() == 'wsj':
             return WSJGainer()

@@ -3,14 +3,14 @@
 Script to get stock gainers from different sources.
 
 Usage:
-    python get_gainer.py <source>
+    python get_gainer.py
 """
 import sys
 from bin.gainers.factory import GainerFactory
 
 
 def main():
-    """Main function to run the gainer script."""
+    """main function to run script"""
     if len(sys.argv) < 2:
         print("Usage: python get_gainer.py <source>")
         print("Available sources: wsj, yahoo")

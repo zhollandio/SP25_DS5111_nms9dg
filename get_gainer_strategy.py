@@ -1,16 +1,16 @@
 #!/usr/bin/env python3
 """
-Script to get stock gainers using Strategy pattern.
+Script to get stock gainers using strategy pattern (extra credit)
 
 Usage:
-    python get_gainer_strategy.py <source>
+    python get_gainer_strategy.py
 """
 import sys
 from bin.gainers.strategy.gainer_context import GainerContext
 
 
 def main():
-    """Main function to run the gainer script."""
+    """main function to run script."""
     if len(sys.argv) < 2:
         print("Usage: python get_gainer_strategy.py <source>")
         print("Available sources: wsj, yahoo")

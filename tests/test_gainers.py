@@ -1,4 +1,4 @@
-"""Tests for the gainer classes."""
+"""Tests for the gainer classes"""
 import unittest
 from unittest.mock import patch, MagicMock
 import requests
@@ -10,55 +10,55 @@ from bin.gainers.yahoo import YahooGainer
 
 
 class TestGainerFactory(unittest.TestCase):
-    """Tests for the GainerFactory class."""
+    """tests for the GainerFactory class"""
 
     def test_create_gainer_wsj(self):
-        """Test creating a WSJ gainer."""
+        """test creating a WSJ gainer"""
         gainer = GainerFactory.create_gainer('wsj')
         self.assertIsInstance(gainer, WSJGainer)
 
     def test_create_gainer_yahoo(self):
-        """Test creating a Yahoo gainer."""
+        """test creating a Yahoo gainer"""
         gainer = GainerFactory.create_gainer('yahoo')
         self.assertIsInstance(gainer, YahooGainer)
 
     def test_create_gainer_invalid(self):
-        """Test creating an invalid gainer."""
+        """test creating an invalid gainer."""
         with self.assertRaises(ValueError):
             GainerFactory.create_gainer('invalid')
 
 
 class MockBaseGainer(BaseGainer):
-    """Mock implementation of BaseGainer for testing."""
+    """mock implem of BaseGainer for testing"""
 
     def fetch_gainers(self):
-        """Mock implementation."""
+        """mock implem"""
         return []
 
     def parse_data(self, data):
-        """Mock implementation."""
+        """mock implem"""
         return []
 
     def save_with_timestamp(self):
-        """Mock implementation."""
+        """mock implem"""
         pass
 
 
 class TestBaseGainer(unittest.TestCase):
-    """Tests for the BaseGainer class."""
+    """tests for the BaseGainer class"""
 
     def test_base_gainer(self):
-        """Test the BaseGainer class."""
+        """test the BaseGainer class"""
         gainer = MockBaseGainer()
         self.assertEqual(gainer.gainers, [])
         self.assertEqual(gainer.get_gainers(), [])
 
 
 class TestWSJGainer(unittest.TestCase):
-    """Tests for the WSJGainer class."""
+    """tests for the WSJGainer class"""
 
     def setUp(self):
-        """Set up test fixtures."""
+        """set up test fixtures"""
         self.wsj_gainer = WSJGainer()
         self.test_html = """
         <html>
@@ -83,7 +83,7 @@ class TestWSJGainer(unittest.TestCase):
 
     @patch('requests.get')
     def test_fetch_gainers(self, mock_get):
-        """Test fetching gainers from WSJ."""
+        """test fetching gainers from WSJ"""
         mock_response = MagicMock()
         mock_response.status_code = 200
         mock_response.text = self.test_html
@@ -98,14 +98,10 @@ class TestWSJGainer(unittest.TestCase):
             self.assertEqual(gainers, [{'symbol': 'AAPL'}])
 
     def test_parse_data(self):
-        """Test parsing WSJ data."""
-        # This test will depend on your actual implementation
-        # Adjust the expected output based on your parse_data implementation
+        """test parsing WSJ data"""
         gainers = self.wsj_gainer.parse_data(self.test_html)
-
-        # Assuming your parse_data correctly extracts the data from the test HTML
         self.assertEqual(len(gainers), 1)
-        if gainers:  # Protect against empty list
+        if gainers:  # protect against empty list
             self.assertEqual(gainers[0].get('symbol'), 'AAPL')
             self.assertEqual(gainers[0].get('name'), 'Apple Inc.')
             self.assertEqual(gainers[0].get('price'), '150.00')
@@ -113,17 +109,17 @@ class TestWSJGainer(unittest.TestCase):
 
     @patch('builtins.print')
     def test_print_gainers(self, mock_print):
-        """Test printing gainers."""
+        """test printing gainers"""
         self.wsj_gainer.gainers = [{'symbol': 'AAPL', 'name': 'Apple Inc.'}]
         self.wsj_gainer.print_gainers()
         mock_print.assert_called_with({'symbol': 'AAPL', 'name': 'Apple Inc.'})
 
 
 class TestYahooGainer(unittest.TestCase):
-    """Tests for the YahooGainer class."""
+    """tests for the YahooGainer class"""
 
     def setUp(self):
-        """Set up test fixtures."""
+        """set up test fixtures"""
         self.yahoo_gainer = YahooGainer()
         self.test_html = """
         <html>
@@ -145,7 +141,7 @@ class TestYahooGainer(unittest.TestCase):
 
     @patch('requests.get')
     def test_fetch_gainers(self, mock_get):
-        """Test fetching gainers from Yahoo."""
+        """test fetching gainers from Yahoo"""
         mock_response = MagicMock()
         mock_response.status_code = 200
         mock_response.text = self.test_html
@@ -160,14 +156,10 @@ class TestYahooGainer(unittest.TestCase):
             self.assertEqual(gainers, [{'symbol': 'MSFT'}])
 
     def test_parse_data(self):
-        """Test parsing Yahoo data."""
-        # This test will depend on your actual implementation
-        # Adjust the expected output based on your parse_data implementation
+        """test parsing Yahoo data"""
         gainers = self.yahoo_gainer.parse_data(self.test_html)
-
-        # Assuming your parse_data correctly extracts the data from the test HTML
         self.assertEqual(len(gainers), 1)
-        if gainers:  # Protect against empty list
+        if gainers:  # protect against empty list
             self.assertEqual(gainers[0].get('symbol'), 'MSFT')
             self.assertEqual(gainers[0].get('name'), 'Microsoft Corp')
             self.assertEqual(gainers[0].get('price'), '300.00')

@@ -1,4 +1,4 @@
-"""Yahoo Strategy implementation."""
+"""Yahoo Strategy implem"""
 import requests
 from bs4 import BeautifulSoup
 from datetime import datetime
@@ -6,14 +6,14 @@ from .base_strategy import GainerStrategy
 
 
 class YahooStrategy(GainerStrategy):
-    """Strategy for fetching gainers from Yahoo Finance."""
+    """strategy for fetching gainers from yfin"""
 
     def __init__(self):
-        """Initialize the Yahoo strategy."""
+        """init"""
         self.url = "https://finance.yahoo.com/gainers"
 
     def fetch_data(self):
-        """Fetch data from Yahoo."""
+        """fecthd ata from yahoo"""
         print("Downloading yahoo gainers")
         response = requests.get(self.url, timeout=10)
         if response.status_code == 200:
@@ -23,14 +23,13 @@ class YahooStrategy(GainerStrategy):
             return None
 
     def parse_data(self, data):
-        """Parse the HTML data from Yahoo."""
+        """parse HTML data from yahoo"""
         print("Normalizing yahoo gainers")
         gainers = []
         if not data:
             return gainers
 
         soup = BeautifulSoup(data, 'html.parser')
-        # Implement parsing logic similar to original Yahoo class
         gainer_table = soup.find('table', {'data-test': 'gainers-table'})
         if gainer_table:
             rows = gainer_table.find('tbody').find_all('tr')
@@ -50,7 +49,7 @@ class YahooStrategy(GainerStrategy):
         return gainers
 
     def save_data(self, gainers):
-        """Save the Yahoo gainers to a file."""
+        """save gainers to file"""
         print("Saving Yahoo gainers")
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         filename = f"yahoo_gainers_{timestamp}.csv"
