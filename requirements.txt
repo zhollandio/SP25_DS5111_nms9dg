@@ -17,3 +17,5 @@ pytz==2025.1
 six==1.17.0
 tomlkit==0.13.2
 tzdata==2025.1
+requests
+beautifulsoup4
