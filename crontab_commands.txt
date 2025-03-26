@@ -1,0 +1,9 @@
+# Crontab commands for data collection (Lab 07)
+# Collect Yahoo and WSJ gainers three times daily on weekdays
+
+# morning (9:31am EDT = 13:31 UTC)
+31 13 * * 1-5 /home/ubuntu/SP25_DS5111_nms9dg/bin/run_collection.sh morning >> /home/ubuntu/SP25_DS5111_nms9dg/cron_morning.log 2>&1
+# noon (12:30pm EDT = 16:30 UTC)
+30 16 * * 1-5 /home/ubuntu/SP25_DS5111_nms9dg/bin/run_collection.sh noon >> /home/ubuntu/SP25_DS5111_nms9dg/cron_noon.log 2>&1
+# afternoon (4:01pm EDT = 20:01 UTC)
+01 20 * * 1-5 /home/ubuntu/SP25_DS5111_nms9dg/bin/run_collection.sh afternoon >> /home/ubuntu/SP25_DS5111_nms9dg/cron_afternoon.log 2>&1

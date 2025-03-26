@@ -37,11 +37,7 @@ class BaseGainer(ABC):
 
     def process(self):
         """process"""
-        # we need to make sure these lines actually print to stdout
-        # and don't just call the internal functions
         self.fetch_gainers()
-        # print
         for gainer in self.gainers:
             print(gainer)
-        # save
         self.save_with_timestamp()

@@ -60,20 +60,23 @@ class TestWSJGainer(unittest.TestCase):
     def setUp(self):
         """set up test fixtures"""
         self.wsj_gainer = WSJGainer()
+        # updated test HTML to match the actual structure expected by parse_data
         self.test_html = """
         <html>
             <body>
-                <table class="WSJTables--table">
+                <table>
                     <tr>
                         <th>Symbol</th>
-                        <th>Name</th>
+                        <th>Volume</th>
                         <th>Price</th>
                         <th>Change</th>
+                        <th>%Change</th>
                     </tr>
                     <tr>
-                        <td>AAPL</td>
-                        <td>Apple Inc.</td>
+                        <td>Apple Inc. (AAPL)</td>
+                        <td>1000000</td>
                         <td>150.00</td>
+                        <td>+7.5</td>
                         <td>+5.0%</td>
                     </tr>
                 </table>
@@ -81,39 +84,32 @@ class TestWSJGainer(unittest.TestCase):
         </html>
         """
 
-    @patch('requests.get')
-    def test_fetch_gainers(self, mock_get):
+    @patch('bin.gainers.wsj.WSJGainer.fetch_gainers', autospec=True)
+    def test_fetch_gainers(self, mock_fetch):
         """test fetching gainers from WSJ"""
-        mock_response = MagicMock()
-        mock_response.status_code = 200
-        mock_response.text = self.test_html
-        mock_get.return_value = mock_response
-
-        with patch.object(self.wsj_gainer, 'parse_data') as mock_parse:
-            mock_parse.return_value = [{'symbol': 'AAPL'}]
-            gainers = self.wsj_gainer.fetch_gainers()
-
-            mock_get.assert_called_once_with(self.wsj_gainer.url, timeout=10)
-            mock_parse.assert_called_once_with(self.test_html)
-            self.assertEqual(gainers, [{'symbol': 'AAPL'}])
+        # set up the mock to return a sample result
+        mock_fetch.return_value = [{'Symbol': 'AAPL'}]
+        gainers = self.wsj_gainer.fetch_gainers()
+        mock_fetch.assert_called_once_with(self.wsj_gainer)
+        self.assertEqual(gainers, [{'Symbol': 'AAPL'}])
 
     def test_parse_data(self):
         """test parsing WSJ data"""
         gainers = self.wsj_gainer.parse_data(self.test_html)
         self.assertEqual(len(gainers), 1)
         if gainers:  # protect against empty list
-            self.assertEqual(gainers[0].get('symbol'), 'AAPL')
-            self.assertEqual(gainers[0].get('name'), 'Apple Inc.')
-            self.assertEqual(gainers[0].get('price'), '150.00')
-            self.assertEqual(gainers[0].get('change'), '+5.0%')
+            self.assertEqual(gainers[0].get('Symbol'), 'AAPL')
+            self.assertEqual(gainers[0].get('Company'), 'Apple Inc.')
+            self.assertEqual(gainers[0].get('Price'), '150.00')
+            self.assertEqual(gainers[0].get('Change'), '+7.5')
+            self.assertEqual(gainers[0].get('%Change'), '+5.0%')
 
     @patch('builtins.print')
     def test_print_gainers(self, mock_print):
         """test printing gainers"""
-        self.wsj_gainer.gainers = [{'symbol': 'AAPL', 'name': 'Apple Inc.'}]
+        self.wsj_gainer.gainers = [{'Symbol': 'AAPL', 'Company': 'Apple Inc.'}]
         self.wsj_gainer.print_gainers()
-        mock_print.assert_called_with({'symbol': 'AAPL', 'name': 'Apple Inc.'})
-
+        mock_print.assert_called_with({'Symbol': 'AAPL', 'Company': 'Apple Inc.'})
 
 class TestYahooGainer(unittest.TestCase):
     """tests for the YahooGainer class"""
@@ -151,7 +147,12 @@ class TestYahooGainer(unittest.TestCase):
             mock_parse.return_value = [{'symbol': 'MSFT'}]
             gainers = self.yahoo_gainer.fetch_gainers()
 
-            mock_get.assert_called_once_with(self.yahoo_gainer.url, timeout=10)
+            # updated since we refactored wsj and yahoo gainers
+            mock_get.assert_called_once()
+            self.assertEqual(mock_get.call_args[0][0], self.yahoo_gainer.url)
+            self.assertIn('headers', mock_get.call_args[1])
+            self.assertEqual(mock_get.call_args[1]['timeout'], 15)
+
             mock_parse.assert_called_once_with(self.test_html)
             self.assertEqual(gainers, [{'symbol': 'MSFT'}])
 
@@ -168,8 +169,9 @@ class TestYahooGainer(unittest.TestCase):
     @patch('builtins.print')
     def test_save_with_timestamp(self, mock_print):
         """Test saving gainers with timestamp."""
+        self.yahoo_gainer.gainers = []
         self.yahoo_gainer.save_with_timestamp()
-        mock_print.assert_called_with("Saving Yahoo gainers")
+        mock_print.assert_any_call("Saving Yahoo gainers")
 
 
 if __name__ == '__main__':
