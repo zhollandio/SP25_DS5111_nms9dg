@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup
 from .base import BaseGainer
 from datetime import datetime
 
-
+# nice, a new gainer added.  this and the mock class turbo charge the oop structure.
 class CNBCGainer(BaseGainer):
     """class for fetching gainers from CNBC market movers"""
 
