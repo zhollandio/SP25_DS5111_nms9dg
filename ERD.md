@@ -38,6 +38,20 @@ The data pipeline begins with automated collection and ends in analytics-ready t
 
 These tables are used to create visualizations, reports, or further analysis in DBT and Snowflake in later labs.
 
+## Summary
+
+This ERD captures the full data flow from raw collection to analysis-ready tables, covering all critical stages of the data pipeline. The model includes the ingestion of multiple daily CSVs from both Yahoo Finance and the Wall Street Journal, automated via scheduled scripts, and tracks how this data is cleaned, normalized, merged, and ultimately summarized for analytical use.
+
+We focused on key business questions such as:
+- Which stock symbols appear most frequently over the week?
+- What are the average, minimum, and maximum prices and volumes per day?
+- How do gainer lists from Yahoo and WSJ differ?
+
+The current ERD is also forward-compatible. We’ve incorporated a `CANDLESTICK_RAW` table for future trend analysis based on open/high/low/close data. While this raw table isnt transformed into summaries(not provided yet), it sets the foundation for upcoming labs where we will integrate more technical indicators or perform pattern analysis (e.g., volatility tracking, correlation with gainers, etc.).
+
+The data model is designed to be easily extensible. With minor additions, it could support sector-based analysis, moving averages, correlation between stocks, or even integration with external sources like news sentiment or earnings reports. These would enable richer visualizations and deeper insights for both technical and non-technical stakeholders.
+
+In its current form, the ERD achieves the core goal of the lab(08): to build a structure that transforms raw stock gainer data into meaningful, queryable formats for downstream exploration, storytelling, and business intelligence.
 
 
 ## Mermaid ERD
