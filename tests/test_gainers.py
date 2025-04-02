@@ -45,7 +45,7 @@ class MockBaseGainer(BaseGainer):
 
 
 class TestBaseGainer(unittest.TestCase):
-    """tests for the BaseGainer class"""
+    """tests for the BaseGainer class""" 
 
     def test_base_gainer(self):
         """test the BaseGainer class"""
@@ -59,8 +59,10 @@ class TestWSJGainer(unittest.TestCase):
 
     def setUp(self):
         """set up test fixtures"""
-        self.wsj_gainer = WSJGainer()
+        self.wsj_gainer = WSJGainer() 
         # updated test HTML to match the actual structure expected by parse_data
+        # this is great, very solid when you don't expect the format to change.  Also makes
+        # reading the test explicit so you are also documenting what you expect.
         self.test_html = """
         <html>
             <body>
