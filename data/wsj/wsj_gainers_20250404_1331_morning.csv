@@ -1,0 +1,94 @@
+Symbol,Company,Volume,Price,Change,%Change
+ICCT,iCoreConnect Inc.,106.2K,5.05,0.82,19.39
+XEL,Xcel Energy Inc.,59.4K,73.00,0.86,1.19
+PEP,PepsiCo Inc.,148.9K,153.10,1.73,1.14
+AEP,American Electric Power Co. Inc.,66.1K,110.26,1.16,1.06
+KDP,Keurig Dr Pepper Inc.,124.7K,35.88,0.25,0.70
+ALDX,Aldeyra Therapeutics Inc.,131.8K,1.42,0.00,0.00
+BLND,Blend Labs Inc.,58.2K,3.44,0.00,0.00
+MNST,Monster Beverage Corp.,62.6K,59.52,-0.13,-0.21
+LIN,Linde PLC,56.7K,464.36,-2.86,-0.61
+NTLA,Intellia Therapeutics Inc.,76.9K,6.83,-0.06,-0.87
+KHC,Kraft Heinz Co.,171.0K,30.50,-0.32,-1.02
+NOK,Nokia Corp. ADR,66.5K,4.92,-0.06,-1.20
+CTSH,Cognizant Technology Solutions Corp.,60.8K,72.22,-1.04,-1.43
+WBA,Walgreens Boots Alliance Inc.,142.8K,10.90,-0.16,-1.45
+HON,Honeywell International Inc.,65.3K,203.40,-3.28,-1.59
+GILD,Gilead Sciences Inc.,122.4K,110.39,-2.00,-1.78
+EXPD,Expeditors International of Washington Inc.,68.6K,108.52,-2.15,-1.94
+IOVA,Iovance Biotherapeutics Inc.,103.9K,3.18,-0.07,-2.00
+PARA,Paramount Global Cl B,60.1K,11.25,-0.23,-2.00
+EPD,Enterprise Products Partners L.P.,53.1K,32.76,-0.70,-2.11
+CMCSA,Comcast Corp. Cl A,291.8K,34.93,-0.79,-2.21
+NFLX,Netflix Inc.,70.7K,894.75,-22.30,-2.43
+BTBT,Bit Digital Inc.,88.3K,1.92,-0.05,-2.54
+TXN,Texas Instruments Inc.,81.6K,159.97,-4.23,-2.58
+TEM,Tempus AI Inc.,82.0K,44.94,-1.23,-2.66
+NVDA,NVIDIA Corp.,102.2K,98.95,-2.85,-2.80
+MARA,MARA Holdings Inc.,194.3K,10.90,-0.33,-2.89
+ULCC,Frontier Group Holdings Inc.,72.8K,3.69,-0.11,-2.89
+INTC,Intel Corp.,1.2M,21.78,-0.65,-2.90
+PYPL,PayPal Holdings Inc.,235.5K,59.86,-1.85,-3.00
+RIOT,Riot Platforms Inc.,120.7K,7.08,-0.22,-3.01
+ARCC,Ares Capital Corp.,248.3K,20.85,-0.67,-3.11
+FTNT,Fortinet Inc.,148.0K,86.58,-2.86,-3.20
+CARR,Carrier Global Corp.,129.8K,58.76,-1.96,-3.23
+ON,ON Semiconductor Corp.,81.1K,34.41,-1.15,-3.23
+WULF,TeraWulf Inc.,109.0K,2.56,-0.09,-3.38
+IREN,IREN Ltd.,150.1K,5.82,-0.22,-3.64
+TSCO,Tractor Supply Co.,109.2K,53.72,-2.05,-3.68
+STNE,StoneCo Ltd. Cl A,75.7K,10.95,-0.44,-3.86
+WDC,Western Digital Corp.,103.0K,32.81,-1.34,-3.93
+BBD,Banco Bradesco S/A Pref ADR,72.2K,2.19,-0.10,-4.15
+AUR,Aurora Innovation Inc.,148.0K,6.01,-0.27,-4.22
+TSM,Taiwan Semiconductor Manufacturing Co. Ltd. ADR,58.5K,150.62,-6.76,-4.30
+SLB,Schlumberger Ltd.,56.3K,37.52,-1.69,-4.31
+UBER,Uber Technologies Inc.,68.8K,66.79,-3.06,-4.38
+CX,Cemex S.A.B. de C.V. ADR,64.4K,5.32,-0.24,-4.41
+APLD,Applied Digital Corp.,105.6K,5.41,-0.25,-4.42
+NWL,Newell Brands Inc.,92.3K,5.22,-0.24,-4.48
+BMBL,Bumble Inc. Cl A,68.0K,4.04,-0.19,-4.49
+VLY,Valley National Bancorp,53.8K,7.73,-0.37,-4.57
+VALE,Vale S.A. ADR,240.6K,9.28,-0.45,-4.57
+RGTI,Rigetti Computing Inc.,184.5K,7.77,-0.38,-4.67
+NU,Nu Holdings Ltd. Cl A,267.6K,9.78,-0.49,-4.77
+NNE,Nano Nuclear Energy Inc.,58.4K,22.34,-1.13,-4.81
+MU,Micron Technology Inc.,402.4K,70.70,-3.64,-4.90
+NBIS,Nebius Group N.V. Cl A,82.6K,20.68,-1.09,-5.01
+AAPL,Apple Inc.,2.3M,192.99,-10.20,-5.02
+ET,Energy Transfer LP,101.2K,16.82,-0.91,-5.13
+TER,Teradyne Inc.,64.8K,71.10,-3.99,-5.31
+SABR,Sabre Corp.,54.9K,2.22,-0.13,-5.34
+EQH,Equitable Holdings Inc.,188.8K,47.52,-2.69,-5.35
+COMM,CommScope Holding Co. Inc.,80.2K,3.88,-0.22,-5.37
+EVGO,EVgo Inc. Cl A,52.8K,2.41,-0.14,-5.49
+SMCI,Super Micro Computer Inc.,367.8K,30.54,-1.78,-5.51
+ENVX,Enovix Corp.,99.4K,6.26,-0.37,-5.58
+LI,Li Auto Inc. ADR,61.0K,23.37,-1.40,-5.65
+NIO,NIO Inc. ADR,341.0K,3.52,-0.21,-5.75
+UAA,Under Armour Inc. Cl A,91.5K,5.04,-0.32,-5.88
+SHOP,Shopify Inc.,241.7K,77.42,-4.87,-5.91
+SOUN,SoundHound AI Inc.,364.5K,7.80,-0.50,-6.02
+TCOM,Trip.com Group Ltd. ADR,69.1K,57.42,-3.78,-6.18
+PTEN,Patterson-UTI Energy Inc.,103.6K,6.50,-0.43,-6.20
+TME,Tencent Music Entertainment Group ADR,83.1K,13.42,-0.90,-6.28
+HBM,Hudbay Minerals Inc.,51.3K,6.66,-0.46,-6.40
+JBLU,JetBlue Airways Corp.,120.1K,3.90,-0.27,-6.47
+FSM,Fortuna Mining Corp.,54.8K,5.70,-0.40,-6.49
+AMZN,Amazon.com Inc.,2.3M,166.80,-11.61,-6.51
+VNET,VNET Group Inc. ADR,76.5K,6.85,-0.48,-6.55
+UPST,Upstart Holdings Inc.,86.9K,36.05,-2.64,-6.82
+NFE,New Fortress Energy LLC Cl A,52.0K,6.41,-0.47,-6.90
+NGD,New Gold Inc.,73.5K,3.30,-0.24,-6.92
+RCAT,Red Cat Holdings Inc.,64.7K,6.31,-0.48,-7.07
+SERV,Serve Robotics Inc.,53.4K,5.02,-0.39,-7.21
+PTON,Peloton Interactive Inc.,341.3K,5.01,-0.39,-7.22
+UAL,United Airlines Holdings Inc.,157.9K,55.83,-4.40,-7.31
+SAN,Banco Santander S.A. ADR,54.7K,6.07,-0.50,-7.60
+PDD,PDD Holdings Inc. ADR,691.3K,105.00,-8.67,-7.63
+CRWV,CoreWeave Inc. Cl A,101.8K,49.50,-4.30,-7.99
+AFRM,Affirm Holdings Inc. Cl A,97.8K,35.72,-3.19,-8.19
+NIU,Niu Technologies ADR,69.4K,3.50,-0.32,-8.38
+BCS,Barclays PLC ADR,123.3K,13.09,-1.22,-8.53
+BE,Bloom Energy Corp.,90.9K,17.61,-1.73,-8.95
+FUTU,Futu Holdings Ltd. ADR,60.3K,88.50,-8.99,-9.22
