@@ -3,7 +3,8 @@ import os
 import pytest
 import pandas as pd
 # project's root directory to sys.path so Python can find `bin/`
-sys.path.insert(0, os.path.abspath(os.path.dirname(os.path.dirname(__file__))))
+sys.path.insert(0, os.path.abspath(os.path.dirname(os.path.dirname(__file__)))) # awesome.  it can be tricky to use all the nested os.path(s),
+                                                                                # but avoiding a hard coded path is worth it.  
 from bin.normalize_csv import normalize_csv
 
 # creating test dir and data
@@ -22,7 +23,7 @@ INVALID_CSV_CONTENT = """random_text
 This is not a CSV
 """
 
-@pytest.fixture
+@pytest.fixture # using pytest fixture, cool
 def create_csv_file():
     """Helper fixture to create a test CSV file"""
     def _create(filename, content):
