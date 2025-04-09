@@ -26,6 +26,7 @@ test:
 lint-test: test
 
 # run get_gainer.py with specified source
+# nice use of the if/fi block for providing feedback
 gainers:
 	@if [ -z "$(SRC)" ]; then \
                 echo "Error: SRC parameter is required. Use 'make gainers SRC=yahoo'"; \

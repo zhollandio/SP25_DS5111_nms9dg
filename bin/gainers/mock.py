@@ -2,7 +2,7 @@
 from datetime import datetime
 from .base import BaseGainer
 
-
+# this is great!  Totally leveraging the OOP architecture
 class MockGainer(BaseGainer):
     """mock gainer for testing w/o external dependencies"""
 
