@@ -22,3 +22,5 @@ beautifulsoup4
 requests-html
 lxml[html_clean]
 lxml_html_clean
+dbt-core
+dbt-snowflake
