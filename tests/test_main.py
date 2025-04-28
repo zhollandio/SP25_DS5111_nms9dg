@@ -1,5 +1,6 @@
 """Tests for the main get_gainer.py script"""
 import unittest  # I like what you did with the tests, however you didn't get to test-drive pytest
+import pytest
 from unittest.mock import patch, MagicMock
 import sys
 import os
@@ -36,7 +37,6 @@ class TestGetGainer(unittest.TestCase):
         # use mock main function instead of importing
         mock_main()
 
-
     @patch('sys.argv', ['get_gainer.py', 'invalid'])
     @patch('sys.exit')
     def test_main_invalid_source(self, mock_exit):
@@ -51,6 +51,11 @@ class TestGetGainer(unittest.TestCase):
         mock_main()
         mock_exit.assert_called_with(1)
 
+
+# Decorator
+@pytest.mark.parametrize("num", [1, 2, 3])
+def test_dummy_parametrize(num):
+    assert num in [1, 2, 3]
 
 if __name__ == '__main__':
     unittest.main()
