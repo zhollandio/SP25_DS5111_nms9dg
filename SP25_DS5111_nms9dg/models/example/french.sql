@@ -1,0 +1,2 @@
+SELECT fr
+FROM DATA_SCIENCE.nms9dg_RAW.numbers

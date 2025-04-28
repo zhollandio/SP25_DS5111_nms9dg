@@ -1,0 +1,101 @@
+Symbol,Company,Volume,Price,Change,%Change
+VERO,Venus Concept Inc.,171.8K,11.04,8.12,278.24
+SBSW,Sibanye-Stillwater Ltd. ADR,117.3K,3.47,0.25,7.75
+SSRM,SSR Mining Inc.,64.6K,9.83,0.56,6.04
+AG,First Majestic Silver Corp.,95.5K,5.55,0.31,5.92
+BILI,Bilibili Inc. ADR,101.5K,15.64,0.76,5.11
+GRAB,Grab Holdings Ltd.,1.1M,3.92,0.19,5.09
+EQX,Equinox Gold Corp.,122.3K,5.96,0.27,4.75
+BTG,B2Gold Corp.,111.0K,2.78,0.13,4.70
+GTLB,GitLab Inc. Cl A,81.9K,41.80,1.28,3.16
+RGTI,Rigetti Computing Inc.,380.0K,7.96,0.24,3.11
+KC,Kingsoft Cloud Holdings Ltd. ADR,61.7K,11.81,0.34,3.01
+SLRN,ACELYRIN Inc.,104.6K,2.14,0.06,2.88
+WB,Weibo Corp. ADR,62.2K,7.25,0.20,2.84
+LI,Li Auto Inc. ADR,51.1K,20.32,0.53,2.68
+NVDA,NVIDIA Corp.,3.1M,98.83,2.53,2.63
+AVGO,Broadcom Inc.,532.5K,159.98,3.94,2.53
+NBIS,Nebius Group N.V. Cl A,74.7K,20.55,0.49,2.44
+WOLF,Wolfspeed Inc.,84.8K,2.23,0.05,2.29
+BZ,Kanzhun Ltd. ADR,194.7K,14.44,0.29,2.05
+AFRM,Affirm Holdings Inc. Cl A,95.6K,37.18,0.73,2.00
+MSTR,MicroStrategy Inc.,176.4K,242.68,4.73,1.99
+SIRI,Sirius XM Holdings Inc.,74.7K,19.69,0.35,1.81
+AMD,Advanced Micro Devices Inc.,574.6K,79.52,1.31,1.67
+TSLA,Tesla Inc.,736.0K,225.23,3.37,1.52
+TME,Tencent Music Entertainment Group ADR,132.6K,12.16,0.18,1.50
+AMZN,Amazon.com Inc.,1.2M,173.22,2.56,1.50
+SMCI,Super Micro Computer Inc.,280.2K,32.17,0.46,1.45
+PLTR,Palantir Technologies Inc.,829.1K,78.34,1.02,1.32
+CCEP,Coca-Cola Europacific Partners PLC,56.8K,82.91,1.07,1.31
+CCL,Carnival Corp.,54.0K,16.90,0.21,1.29
+NIO,NIO Inc. ADR,203.2K,3.18,0.04,1.27
+LRCX,Lam Research Corp.,108.0K,60.87,0.62,1.03
+MCHP,Microchip Technology Inc.,162.9K,35.68,0.34,0.98
+FTNT,Fortinet Inc.,65.7K,88.98,0.83,0.94
+TCOM,Trip.com Group Ltd. ADR,72.0K,52.68,0.47,0.90
+LCID,Lucid Group Inc.,330.8K,2.34,0.02,0.86
+AAL,American Airlines Group Inc.,587.1K,9.15,0.08,0.86
+TTD,Trade Desk Inc. Cl A,69.4K,45.60,0.34,0.74
+DKNG,DraftKings Inc. Cl A,81.1K,32.12,0.23,0.72
+PTON,Peloton Interactive Inc.,152.2K,5.04,0.04,0.70
+RKLB,Rocket Lab USA Inc.,218.8K,17.30,0.12,0.70
+TEM,Tempus AI Inc.,100.1K,37.44,0.21,0.56
+MU,Micron Technology Inc.,272.1K,65.90,0.35,0.54
+QCOM,Qualcomm Inc.,142.8K,125.31,0.65,0.52
+WULF,TeraWulf Inc.,116.5K,2.27,0.01,0.44
+JD,JD.com Inc. ADR,156.5K,33.16,0.14,0.42
+HUT,Hut 8 Corp.,53.6K,11.12,0.04,0.41
+MARA,MARA Holdings Inc.,306.1K,10.56,0.04,0.38
+AMAT,Applied Materials Inc.,129.2K,129.42,0.46,0.36
+MRVL,Marvell Technology Inc.,226.1K,50.20,0.17,0.35
+MNST,Monster Beverage Corp.,73.1K,55.18,0.17,0.30
+CLSK,CleanSpark Inc.,148.2K,6.76,0.02,0.30
+ON,ON Semiconductor Corp.,75.5K,32.04,0.09,0.28
+SOUN,SoundHound AI Inc.,179.4K,7.20,0.02,0.28
+AAPL,Apple Inc.,2.1M,172.94,0.52,0.30
+MSFT,Microsoft Corp.,494.6K,355.48,0.93,0.26
+GOOGL,Alphabet Inc. Cl A,552.6K,144.98,0.28,0.19
+BB,BlackBerry Ltd.,53.8K,2.88,0.01,0.17
+GOOG,Alphabet Inc. Cl C,360.2K,146.83,0.25,0.17
+CSCO,Cisco Systems Inc.,362.3K,53.28,0.09,0.17
+ARM,Arm Holdings PLC ADR,92.9K,85.92,0.10,0.11
+NU,Nu Holdings Ltd. Cl A,192.3K,9.98,0.01,0.10
+COIN,Coinbase Global Inc.,61.3K,151.57,0.10,0.06
+EPWK,EPWK Holdings Ltd. Cl A,260.7K,4.81,-0.00,0.00
+IREN,IREN Ltd.,121.0K,5.30,-0.00,-0.03
+UAL,United Airlines Holdings Inc.,119.5K,56.13,-0.02,-0.04
+CPRT,Copart Inc.,117.0K,54.57,-0.02,-0.04
+CRWD,CrowdStrike Holdings Inc. Cl A,52.3K,324.88,-0.17,-0.05
+WDC,Western Digital Corp.,75.1K,31.53,-0.02,-0.06
+KDP,Keurig Dr Pepper Inc.,123.6K,33.54,-0.03,-0.09
+LYFT,Lyft Inc. Cl A,141.7K,9.96,-0.01,-0.10
+RIVN,Rivian Automotive Inc. Cl A,391.4K,10.78,-0.02,-0.19
+SHEL,Shell PLC ADR,53.6K,59.61,-0.14,-0.23
+SOFI,SoFi Technologies Inc.,486.9K,9.48,-0.03,-0.26
+PANW,Palo Alto Networks Inc.,97.0K,152.11,-0.42,-0.28
+APLD,Applied Digital Corp.,79.7K,5.07,-0.01,-0.30
+HOOD,Robinhood Markets Inc.,479.0K,34.07,-0.10,-0.30
+INTC,Intel Corp.,1.6M,18.08,-0.06,-0.30
+PEP,PepsiCo Inc.,120.4K,139.83,-0.47,-0.33
+TXN,Texas Instruments Inc.,109.8K,145.46,-0.55,-0.38
+CORZ,Core Scientific Inc.,57.2K,6.48,-0.03,-0.38
+RIOT,Riot Platforms Inc.,129.4K,6.51,-0.03,-0.46
+ADBE,Adobe Inc.,51.3K,338.24,-1.76,-0.52
+BKR,Baker Hughes Co.,172.6K,34.81,-0.19,-0.54
+ZM,Zoom Communications Inc.,65.3K,66.32,-0.38,-0.57
+KHC,Kraft Heinz Co.,167.2K,27.53,-0.16,-0.58
+APP,AppLovin Corp.,102.0K,233.88,-1.41,-0.60
+MTCH,Match Group Inc.,51.8K,26.83,-0.20,-0.74
+CMCSA,Comcast Corp. Cl A,324.8K,32.59,-0.25,-0.76
+META,Meta Platforms Inc.,234.4K,506.53,-3.92,-0.77
+PYPL,PayPal Holdings Inc.,190.1K,56.95,-0.46,-0.80
+QUBT,Quantum Computing Inc.,123.5K,6.16,-0.05,-0.81
+ENVX,Enovix Corp.,57.3K,5.42,-0.04,-0.82
+GBDC,Golub Capital BDC Inc.,71.2K,12.92,-0.11,-0.84
+LAES,SEALSQ Corp.,72.1K,2.30,-0.02,-0.86
+LUNR,Intuitive Machines Inc. Cl A,100.2K,7.19,-0.06,-0.88
+NDAQ,Nasdaq Inc.,84.9K,65.81,-0.59,-0.90
+CSX,CSX Corp.,161.0K,26.44,-0.24,-0.92
+SBUX,Starbucks Corp.,143.1K,78.94,-0.74,-0.93
+AEP,American Electric Power Co. Inc.,54.9K,100.26,-1.02,-1.01

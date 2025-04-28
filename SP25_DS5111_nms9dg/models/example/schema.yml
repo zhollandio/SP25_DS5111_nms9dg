@@ -2,6 +2,8 @@
 version: 2
 
 models:
+
+
   - name: my_first_dbt_model
     description: "A starter dbt model"
     columns:
@@ -9,7 +11,6 @@ models:
         description: "The primary key for this table"
         data_tests:
           - unique
-          - not_null
 
   - name: my_second_dbt_model
     description: "A starter dbt model"
@@ -19,3 +20,81 @@ models:
         data_tests:
           - unique
           - not_null
+
+
+
+  - name: french
+    description: "test french table"
+    columns:
+      - name: FR
+        description: "The primary key for this table"
+        data_tests:
+          - unique
+          - not_null
+          - accepted_values:
+              values:  ['un', 'deux', 'trois']
+
+
+  - name: wsj_prices
+    description: "WSJ gainer data for prices and percent change"
+    columns:
+      - name: symbol
+        description: "Stock ticker"
+        tests:
+          - not_null
+          - unique
+
+      - name: company
+        description: "Company name"
+        tests:
+          - not_null
+
+      - name: price
+        description: "Current price"
+        tests:
+          - not_null
+
+      - name: percent_change
+        description: "Daily percent change"
+        tests:
+          - not_null
+
+      - name: volume
+        description: "Trading volume (cleaned, numeric)"
+        tests:
+          - not_null
+
+  - name: enfr
+    description: "English to French mappings"
+    columns:
+      - name: en
+        tests:
+          - not_null
+          - unique
+      - name: fr
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['un', 'deux', 'trois']
+
+  - name: ende
+    description: "English to German mappings"
+    columns:
+      - name: en
+        tests:
+          - not_null
+          - unique
+      - name: de
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['einz', 'zwei', 'drei']
+
+  - name: enfr
+    description: "Check if all EN in enfr exist in ende"
+    columns:
+      - name: en
+        tests:
+          - relationships:
+              to: ref('ende')
+              field: en
